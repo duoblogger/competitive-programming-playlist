@@ -1,0 +1,15 @@
+---
+layout: main
+---
+
+<div class="single-content">
+    <h2 class="single-h2"> {{page.title}}</h2>
+    <div class="fb-like" data-href="{{ page.url | prepend: site.baseurl | replace: '//', '/' }}" data-width=""
+        data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+    <br />
+    <br><br>
+    <hr />
+    <div class="page-content">
+        {{ content }}
+    </div>
+</div>

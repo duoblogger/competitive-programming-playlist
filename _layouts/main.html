@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"></script>
+    {% include navbar.html %}
+    {% include banner.html %}
+    {% include announcement.html %}
+    <main>
+        {{ content }}
+    </main>
+
+    {% include sidebar.html %}
+
+    <footer>copyright&copy; asifthen00b.</footer>
+    <script src="{{"/assets/js/app.js" | relative_url }}"></script>
+</body>
+
+</html>

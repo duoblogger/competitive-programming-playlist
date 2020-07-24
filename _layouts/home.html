@@ -1,0 +1,39 @@
+---
+layout: main
+---
+
+{% for post in site.posts limit: 9 %}
+
+<div class="single-content home-single-content">
+    <!-- asldkflaskdflaksdflkasdf   -->
+    <h2 class="home-header"> <a class="home-header"
+            href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{post.title}}</a>
+    </h2>
+
+    <h5>Posted by {{ post.author }} on {{ post.date | date: '%B %d, %Y' }}</h5>
+
+    <!-- <span id="categories">{{post.categories}}</span> -->
+    <p id="categories">
+        {% for cat in post.categories %}
+        {{cat}} {% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    </p>
+    <!-- <br /> -->
+    <h3>
+        <button class="btn {{post.Difficulty}}">{{post.Difficulty}} Difficulty</button>
+    </h3>
+
+    <!-- <br /> -->
+    <!-- <div class="fb-like" data-href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" data-width=""
+        data-layout="button_count" data-action="like" data-size="large" data-share="true"></div> -->
+    <p>
+        {{ post.subtitle }}
+        <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" target="_blank">.........[Read More]</a>
+    </p>
+</div>
+
+{% endfor %}
+
+<!-- <p style="text-align: center; font-size: 30px;"><a href="/posts/"
+        style="text-align: center; color: red; font-weight: bolder;">................View All
+        Posts.............</a></p><br><br> -->
